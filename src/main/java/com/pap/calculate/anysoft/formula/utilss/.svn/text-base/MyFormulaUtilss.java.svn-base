@@ -1,0 +1,30 @@
+package com.anysoft.formula.utilss;
+
+import com.anysoft.formula.DataProvider;
+import com.anysoft.formula.DefaultFunctionHelper;
+import com.anysoft.formula.Expression;
+import com.anysoft.formula.Parser;
+
+public class MyFormulaUtilss {
+
+	public static Object selfOperationResult(String expressStr) {
+		DefaultFunctionHelper functionHelper = new DefaultFunctionHelper();
+		Parser parser = new Parser(functionHelper);
+		String formula = expressStr;
+		Expression expr = parser.parse(formula);
+
+		Object returnObject = (expr.getValue(new DataProvider() {
+			@Override
+			public String getValue(String varName, Object context,
+					String defaultValue) {
+				return null;
+			}
+
+			@Override
+			public Object getContext(String varName) {
+				return new Object();
+			}
+		}));
+		return returnObject;
+	}
+}
