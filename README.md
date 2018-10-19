@@ -2,6 +2,7 @@
 
 #### 项目介绍
 公式计算器相关代码
+[点击查看博文](https://my.oschina.net/alexgaoyh/blog/2249004)
 
 #### 软件架构
 JAVA工具包
